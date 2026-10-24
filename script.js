@@ -18,14 +18,15 @@ return whats humanChoice using prompt*/
 function getHumanChoice() {
     const humanChoice = prompt("Chose: Rock, Paper, or Scissors?");
     return humanChoice;
-} 
+}
 
-//create two variables
 
-/*create playRound function and add two parameters:
-humanChoice and computerChoice, and use parametes to
-take the human and computer choice as arguments inside function*/
-function playRound (humanChoice, computerChoice) {
+function playGame () {
+    let humanScore = 0;
+    let computerScore = 0;
+
+    function playRound (humanChoice, computerChoice) {
+    humanChoice = humanChoice.toLowerCase();
     if (humanChoice === computerChoice) {
         console.log(`draw, both chose ${humanChoice}`)
     } else if (
@@ -33,11 +34,30 @@ function playRound (humanChoice, computerChoice) {
         (humanChoice === "paper" && computerChoice === "rock") ||
         (humanChoice === "scissors" && computerChoice === "paper")
     ) {
+        humanScore++;
         console.log(`you win, ${humanChoice} beat ${computerChoice}.`)
     } else {
+        computerScore++;
         console.log(`you lose, ${computerChoice} beat ${humanChoice}.`)
     }
 }
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
-playRound(humanSelection, computerSelection);
+    //round 1
+    playRound(getHumanChoice(), getComputerChoice())
+    //round 2
+    playRound(getHumanChoice(), getComputerChoice())
+    //round 3
+    playRound(getHumanChoice(), getComputerChoice())    
+    //round 4
+    playRound(getHumanChoice(), getComputerChoice())
+    //round 5
+    playRound(getHumanChoice(), getComputerChoice())
+
+    if (humanScore > computerScore) {
+        console.log('you win! perfect')
+    } else if (computerScore > humanScore) {
+        console.log('you lose! try again')
+    } else {
+        console.log('draw game! hot')
+    }
+}
+playGame()
