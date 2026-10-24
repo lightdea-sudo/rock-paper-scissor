@@ -1,6 +1,3 @@
-/*create function getComputerChoice, and then
-return randomly value number use Math.random,
-the number should be string using switch (rock, paper, scissors)*/
 function getComputerChoice() {
     const randomChoice = Math.floor(Math.random() * 3)
     switch (randomChoice) {
@@ -13,8 +10,6 @@ function getComputerChoice() {
     }
 }
 
-/*crate function getHumanChoice, and then
-return whats humanChoice using prompt*/
 function getHumanChoice() {
     const humanChoice = prompt("Chose: Rock, Paper, or Scissors?");
     return humanChoice;
@@ -41,15 +36,10 @@ function playGame () {
         console.log(`you lose, ${computerChoice} beat ${humanChoice}.`)
     }
 }
-    //round 1
     playRound(getHumanChoice(), getComputerChoice())
-    //round 2
     playRound(getHumanChoice(), getComputerChoice())
-    //round 3
     playRound(getHumanChoice(), getComputerChoice())    
-    //round 4
     playRound(getHumanChoice(), getComputerChoice())
-    //round 5
     playRound(getHumanChoice(), getComputerChoice())
 
     if (humanScore > computerScore) {
