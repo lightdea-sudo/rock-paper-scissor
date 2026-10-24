@@ -1,17 +1,34 @@
-//Step 2
-//1. create a new function named getComputerChoice
+/*create function getComputerChoice, and then
+return randomly value number use Math.random,
+the number should be string using switch (rock, paper, scissors)*/
 function getComputerChoice() {
-    const computerChoice = Math.floor((Math.random() * 3));
-    return computerChoice === 1? "rock" : computerChoice === 2? "paper" : "scissors";
+    const randomChoice = Math.floor(Math.random() * 3)
+    switch (randomChoice) {
+        case 0:
+            return ("rock");
+        case 1:
+            return ("paper");
+        case 2:
+            return("scissors");
+    }
 }
 console.log(getComputerChoice())
-//2.add math random to 3, in index its starting at 0 to 3
-//3.add return, and read about ternary
-//4.console.log the function
 
-//Step 3
+/*crate function getHumanChoice, and then
+return whats humanChoice using prompt*/
 function getHumanChoice() {
-    const humanChoice = prompt("rock, paper, or, scissors?")
-    return humanChoice.toLowerCase()
+    const humanChoice = prompt("Chose: Rock, Paper, or Scissors?");
+    return humanChoice;
 }
 console.log(getHumanChoice())
+
+//create two variables
+const humanScore = 0;
+const computerScore = 0;
+
+/*create playRound function and add two parameters:
+humanChoice and computerChoice, and use parametes to
+take the human and computer choice as arguments inside function*/
+function playRound(humanChoice, computerChoice) {
+    humanChoice = humanChoice.toLowerCase();
+}
